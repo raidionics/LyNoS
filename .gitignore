@@ -1,0 +1,15 @@
+venv/
+*.nii
+*.nii.gz
+*.pyc
+*.egg-info
+*.csv
+*.ini
+*__pycache__/
+*.DS_Store
+*.json
+*.onnx
+*.xml
+*.obj
+*.zip
+*.txt
