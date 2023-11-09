@@ -27,6 +27,12 @@ app_file: demo/app.py
 
 This repository contains the LyNoS dataset described in ["_Mediastinal lymph nodes segmentation using 3D convolutional neural network ensembles and anatomical priors guiding_"](https://doi.org/10.1080/21681163.2022.2043778). The original pretrained model was made openly available [here](https://github.com/dbouget/ct_mediastinal_structures_segmentation). However, we have gone ahead and made a web demonstration to more easily test the pretrained model. The application was developed using [Gradio](https://www.gradio.app) for the frontend and the segmentation is performed using the [Raidionics](https://raidionics.github.io/) backend.
 
+## [Demo](https://github.com/raidionics/LyNoS#demo) <a target="_blank" href="https://huggingface.co/spaces/andreped/LyNoS"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg"></a>
+
+To access the live demo, click on the `Hugging Face` badge above. Below is a snapshot of the current state of the demo app.
+
+<img width="1400" alt="Screenshot 2023-11-09 at 20 53 29" src="https://github.com/raidionics/LyNoS/assets/29090665/ce661da0-d172-4481-b9b5-8b3e29a9fc1f">
+
 ## [Continuous integration](https://github.com/raidionics/LyNoS#continuous-integration)
 
 | Build Type | Status |
