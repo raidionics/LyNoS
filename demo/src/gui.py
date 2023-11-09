@@ -92,11 +92,7 @@ class WebUI:
 
     def get_img_pred_pair(self, k):
         k = int(k)
-        out = gr.AnnotatedImage(
-            self.combine_ct_and_seg(self.images[k], self.pred_images[k]),
-            visible=True,
-            elem_id="model-2d",
-        ).style(
+        out = gr.AnnotatedImage(self.combine_ct_and_seg(self.images[k], self.pred_images[k]), visible=True, elem_id="model-2d",).style(
             color_map={self.class_name: "#ffae00"},
             height=512,
             width=512,
@@ -161,11 +157,7 @@ class WebUI:
                         )
 
                         with gr.Column(scale=0.2, min_width=150):
-                            run_btn = gr.Button(
-                                "Run analysis",
-                                variant="primary",
-                                elem_id="run-button",
-                            ).style(
+                            run_btn = gr.Button("Run analysis", variant="primary", elem_id="run-button",).style(
                                 full_width=False,
                                 size="lg",
                             )
