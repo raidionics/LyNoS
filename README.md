@@ -1,5 +1,5 @@
 ---
-title: 'AeroPath: automatic airway segmentation using deep learning'
+title: 'LyNoS: automatic lymph node segmentation using deep learning'
 colorFrom: indigo
 colorTo: indigo
 sdk: docker
