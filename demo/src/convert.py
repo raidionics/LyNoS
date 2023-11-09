@@ -28,8 +28,4 @@ def nifti_to_obj(path, output="prediction.obj"):
             thefile.write("vn {0} {1} {2}\n".format(item[0], item[1], item[2]))
 
         for item in faces:
-            thefile.write(
-                "f {0}//{0} {1}//{1} {2}//{2}\n".format(
-                    item[0], item[1], item[2]
-                )
-            )
+            thefile.write("f {0}//{0} {1}//{1} {2}//{2}\n".format(item[0], item[1], item[2]))
