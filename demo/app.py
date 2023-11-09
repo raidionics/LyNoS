@@ -16,8 +16,7 @@ def main():
         "--share",
         type=int,
         default=0,
-        help="Whether to enable the app to be accessible online"
-        "-> setups a public link which requires internet access.",
+        help="Whether to enable the app to be accessible online" "-> setups a public link which requires internet access.",
     )
     args = parser.parse_args()
 

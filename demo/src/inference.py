@@ -61,9 +61,7 @@ def run_model(
             os.path.join(model_path, task, "pipeline.json"),
         )
         rads_config.add_section("Runtime")
-        rads_config.set(
-            "Runtime", "reconstruction_method", "thresholding"
-        )  # thresholding, probabilities
+        rads_config.set("Runtime", "reconstruction_method", "thresholding")  # thresholding, probabilities
         rads_config.set("Runtime", "reconstruction_order", "resample_first")
         rads_config.set("Runtime", "use_preprocessed_data", "False")
 
@@ -77,13 +75,7 @@ def run_model(
 
         # rename and move final result
         os.rename(
-            "./result/prediction-"
-            + splits[0]
-            + "/T0/"
-            + splits[0]
-            + "-t1gd_annotation-"
-            + name
-            + ".nii.gz",
+            "./result/prediction-" + splits[0] + "/T0/" + splits[0] + "-t1gd_annotation-" + name + ".nii.gz",
             "./prediction.nii.gz",
         )
         # Clean-up

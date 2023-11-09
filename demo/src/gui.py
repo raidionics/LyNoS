@@ -92,11 +92,7 @@ class WebUI:
 
     def get_img_pred_pair(self, k):
         k = int(k)
-        out = gr.AnnotatedImage(
-            self.combine_ct_and_seg(self.images[k], self.pred_images[k]),
-            visible=True,
-            elem_id="model-2d",
-        ).style(
+        out = gr.AnnotatedImage(self.combine_ct_and_seg(self.images[k], self.pred_images[k]), visible=True, elem_id="model-2d",).style(
             color_map={self.class_name: "#ffae00"},
             height=512,
             width=512,
@@ -141,17 +137,11 @@ class WebUI:
                                 [sidebar_left, sidebar_state],
                             )
 
-                            btn_clear_logs = gr.Button(
-                                "Clear logs", elem_id="logs-button"
-                            )
+                            btn_clear_logs = gr.Button("Clear logs", elem_id="logs-button")
                             btn_clear_logs.click(flush_logs, [], [])
 
-                        file_output = gr.File(
-                            file_count="single", elem_id="upload"
-                        )
-                        file_output.upload(
-                            self.upload_file, file_output, file_output
-                        )
+                        file_output = gr.File(file_count="single", elem_id="upload")
+                        file_output.upload(self.upload_file, file_output, file_output)
 
                         model_selector = gr.Dropdown(
                             list(self.class_names.keys()),
@@ -167,11 +157,7 @@ class WebUI:
                         )
 
                         with gr.Column(scale=0.2, min_width=150):
-                            run_btn = gr.Button(
-                                "Run analysis",
-                                variant="primary",
-                                elem_id="run-button",
-                            ).style(
+                            run_btn = gr.Button("Run analysis", variant="primary", elem_id="run-button",).style(
                                 full_width=False,
                                 size="lg",
                             )
@@ -203,9 +189,7 @@ class WebUI:
                         with gr.Box():
                             with gr.Column():
                                 # create dummy image to be replaced by loaded images
-                                t = gr.AnnotatedImage(
-                                    visible=True, elem_id="model-2d"
-                                ).style(
+                                t = gr.AnnotatedImage(visible=True, elem_id="model-2d").style(
                                     color_map={self.class_name: "#ffae00"},
                                     height=512,
                                     width=512,
@@ -226,6 +210,4 @@ class WebUI:
         # https://gradio.app/sharing-your-app/
         # inference times > 60 seconds -> need queue():
         # https://github.com/tloen/alpaca-lora/issues/60#issuecomment-1510006062
-        demo.queue().launch(
-            server_name="0.0.0.0", server_port=7860, share=self.share
-        )
+        demo.queue().launch(server_name="0.0.0.0", server_port=7860, share=self.share)
