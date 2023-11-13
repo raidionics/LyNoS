@@ -17,6 +17,7 @@ app_file: demo/app.py
 [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/raidionics/LyNoS/blob/main/LICENSE.md)
 [![CI/CD](https://github.com/raidionics/LyNoS/actions/workflows/deploy.yml/badge.svg)](https://github.com/raidionics/LyNoS/actions/workflows/deploy.yml)
 <a target="_blank" href="https://huggingface.co/spaces/andreped/LyNoS"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg"></a>
+<a href="https://colab.research.google.com/gist/andreped/274bf953771059fd9537877404369bed/lynos-load-dataset-example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 [![paper](https://img.shields.io/badge/paper-pdf-D12424)](https://doi.org/10.1080/21681163.2022.2043778)
 
 **LyNoS** was developed by SINTEF Medical Image Analysis to accelerate medical AI research.
@@ -25,7 +26,54 @@ app_file: demo/app.py
 
 ## [Brief intro](https://github.com/raidionics/LyNoS#brief-intro)
 
-This repository contains the LyNoS dataset described in ["_Mediastinal lymph nodes segmentation using 3D convolutional neural network ensembles and anatomical priors guiding_"](https://doi.org/10.1080/21681163.2022.2043778). The original pretrained model was made openly available [here](https://github.com/dbouget/ct_mediastinal_structures_segmentation). However, we have gone ahead and made a web demonstration to more easily test the pretrained model. The application was developed using [Gradio](https://www.gradio.app) for the frontend and the segmentation is performed using the [Raidionics](https://raidionics.github.io/) backend.
+This repository contains the LyNoS dataset described in ["_Mediastinal lymph nodes segmentation using 3D convolutional neural network ensembles and anatomical priors guiding_"](https://doi.org/10.1080/21681163.2022.2043778).
+The dataset has now also been uploaded to Zenodo and the Hugging Face Hub enabling users to more easily access the data through Python API.
+
+We have also developed a web demo to enable others to easily test the pretrained model presented in the paper. The application was developed using [Gradio](https://www.gradio.app) for the frontend and the segmentation is performed using the [Raidionics](https://raidionics.github.io/) backend.
+
+## [Dataset](https://github.com/raidionics/LyNoS#data) <a href="https://colab.research.google.com/gist/andreped/274bf953771059fd9537877404369bed/lynos-load-dataset-example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+### [Accessing dataset](https://github.com/raidionics/LyNoS#accessing-dataset)
+
+The dataset contains 15 CTs with corresponding lymph nodes, azygos, esophagus, and subclavian carotid arteries. The folder structure is described below.
+
+The easiest way to access the data is through Python with Hugging Face's [datasets](https://pypi.org/project/datasets/) package:
+```
+from datasets import load_dataset
+
+# downloads data from Zenodo through the Hugging Face hub
+# - might take several minutes (~5 minutes in CoLab)
+dataset = load_dataset("andreped/LyNoS")
+print(dataset)
+
+# list paths of all available patients and corresponding features (ct/lymphnodes/azygos/brachiocephalicveins/esophagus/subclaviancarotidarteries)
+for d in dataset["test"]:
+  print(d)
+```
+
+A detailed interactive demo on how to load and work with the data can be seen on CoLab. Click the CoLab badge <a href="https://colab.research.google.com/gist/andreped/6070d1d2914a9ce5847d4b3e687188b7/aeropath-load-dataset-example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> to see the notebook or alternatively click [here](https://github.com/raidionics/AeroPath/blob/main/notebooks/aeropath-load-dataset-example.ipynb) to see it on GitHub.
+
+
+### [Dataset structure](https://github.com/raidionics/LyNoS#dataset-structure)
+
+```
+└── AeroPath.zip
+    ├── stations_sto.csv
+    └──  AeroPath/
+        ├── Pat1/
+        │   ├── pat1_data.nii.gz
+        │   ├── pat1_labels_Azygos.nii.gz
+        │   ├── pat1_labels_Esophagus.nii.gz
+        │   ├── pat1_labels_LymphNodes.nii.gz
+        │   └── pat1_labels_SubCarArt.nii.gz
+        ├── [...]
+        └── Pat15/
+            ├── pat15_data.nii.gz
+            ├── pat15_labels_Azygos.nii.gz
+            ├── pat15_labels_Esophagus.nii.gz
+            ├── pat15_labels_LymphNodes.nii.gz
+            └── pat15_labels_SubCarArt.nii.gz
+```
 
 ## [Demo](https://github.com/raidionics/LyNoS#demo) <a target="_blank" href="https://huggingface.co/spaces/andreped/LyNoS"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg"></a>
 
