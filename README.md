@@ -12,7 +12,7 @@ app_file: demo/app.py
 
 <div align="center">
 <h1 align="center">🫁 LyNoS 🤗</h1>
-<h3 align="center">A lymph node segmentation dataset from contrast CT</h3>
+<h3 align="center">A multilabel lymph node segmentation dataset from contrast CT</h3>
 
 [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/raidionics/LyNoS/blob/main/LICENSE.md)
 [![CI/CD](https://github.com/raidionics/LyNoS/actions/workflows/deploy.yml/badge.svg)](https://github.com/raidionics/LyNoS/actions/workflows/deploy.yml)
