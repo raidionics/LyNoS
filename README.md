@@ -35,7 +35,7 @@ We have also developed a web demo to enable others to easily test the pretrained
 
 ### [Accessing dataset](https://github.com/raidionics/LyNoS#accessing-dataset)
 
-The dataset contains 15 CTs with corresponding lymph nodes, azygos, esophagus, and subclavian carotid arteries. The folder structure is described below.
+The dataset contains 15 CTs with corresponding lymph nodes, azygos, esophagus, and subclavian carotid arteries manual annotations. The folder structure is described below.
 
 The easiest way to access the data is through Python with Hugging Face's [datasets](https://pypi.org/project/datasets/) package:
 ```
