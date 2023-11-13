@@ -139,4 +139,4 @@ If you found the dataset and/or web application relevant in your research, pleas
 
 ## [License](https://github.com/raidionics/LyNoS#license)
 
-The code in this repository is released under [MIT license](https://github.com/raidionics/LyNoS/blob/main/LICENSE.md).
+The code in this repository is released under [MIT license](https://github.com/raidionics/LyNoS/blob/main/LICENSE).
