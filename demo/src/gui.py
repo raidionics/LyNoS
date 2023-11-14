@@ -2,6 +2,8 @@ import os
 
 import gradio as gr
 
+from gradio_shinymodel3d import ShinyModel3D
+
 from .convert import nifti_to_obj
 from .css_style import css
 from .inference import run_model
@@ -50,14 +52,8 @@ class WebUI:
             step=1,
             label="Which 2D slice to show",
         )
-        self.volume_renderer = gr.Model3D(
-            clear_color=[0.0, 0.0, 0.0, 0.0],
-            label="3D Model",
-            show_label=True,
-            visible=True,
-            elem_id="model-3d",
-            camera_position=[90, 180, 768],
-        ).style(height=512)
+        #self.volume_renderer = gr.Model3D(
+        self.volume_renderer = ShinyModel3D()
 
     def set_class_name(self, value):
         LOGGER.info(f"Changed task to: {value}")
@@ -92,11 +88,7 @@ class WebUI:
 
     def get_img_pred_pair(self, k):
         k = int(k)
-        out = gr.AnnotatedImage(self.combine_ct_and_seg(self.images[k], self.pred_images[k]), visible=True, elem_id="model-2d",).style(
-            color_map={self.class_name: "#ffae00"},
-            height=512,
-            width=512,
-        )
+        out = gr.AnnotatedImage(self.combine_ct_and_seg(self.images[k], self.pred_images[k]), visible=True, elem_id="model-2d",)
         return out
 
     def toggle_sidebar(self, state):
@@ -116,9 +108,9 @@ class WebUI:
                         autoscroll=True,
                         elem_id="logs",
                         show_copy_button=True,
-                        scroll_to_output=False,
+                        #scroll_to_output=False,
                         container=True,
-                        line_breaks=True,
+                        #line_breaks=True,
                     )
                     demo.load(read_logs, None, logs, every=1)
 
@@ -148,7 +140,6 @@ class WebUI:
                             label="Task",
                             info="Which structure to segment.",
                             multiselect=False,
-                            size="sm",
                         )
                         model_selector.input(
                             fn=lambda x: self.set_class_name(x),
@@ -157,10 +148,7 @@ class WebUI:
                         )
 
                         with gr.Column(scale=0.2, min_width=150):
-                            run_btn = gr.Button("Run analysis", variant="primary", elem_id="run-button",).style(
-                                full_width=False,
-                                size="lg",
-                            )
+                            run_btn = gr.Button("Run analysis", variant="primary", elem_id="run-button")
                             run_btn.click(
                                 fn=lambda x: self.process(x),
                                 inputs=file_output,
@@ -175,7 +163,7 @@ class WebUI:
                             inputs=file_output,
                             outputs=file_output,
                             fn=self.upload_file,
-                            cache_examples=True,
+                            cache_examples=False,
                         )
 
                         gr.Markdown(
@@ -186,25 +174,19 @@ class WebUI:
                         )
 
                     with gr.Row():
-                        with gr.Box():
-                            with gr.Column():
-                                # create dummy image to be replaced by loaded images
-                                t = gr.AnnotatedImage(visible=True, elem_id="model-2d").style(
-                                    color_map={self.class_name: "#ffae00"},
-                                    height=512,
-                                    width=512,
-                                )
+                        with gr.Column():
+                            # create dummy image to be replaced by loaded images
+                            t = gr.AnnotatedImage(visible=True, elem_id="model-2d")
 
-                                self.slider.input(
-                                    self.get_img_pred_pair,
-                                    self.slider,
-                                    t,
-                                )
+                            self.slider.input(
+                                self.get_img_pred_pair,
+                                self.slider,
+                                t,
+                            )
 
-                                self.slider.render()
+                            self.slider.render()
 
-                        with gr.Box():
-                            self.volume_renderer.render()
+                        self.volume_renderer.render()
 
         # sharing app publicly -> share=True:
         # https://gradio.app/sharing-your-app/
