@@ -75,6 +75,32 @@ A detailed interactive demo on how to load and work with the data can be seen on
             └── pat15_labels_SubCarArt.nii.gz
 ```
 
+### [Lymph nodes stations](https://github.com/raidionics/LyNoS#lymph-nodes-stations)
+For each labelled lymph node in the dataset, the primary, secondary, and up to the tertiary station have been manually assigned according to the IASLC Lung Cancer Staging guidelines, and more specifically following the [2009 map](https://radiologyassistant.nl/chest/mediastinum/mediastinum-lymph-node-map).
+The stations considered can be organized as follows:
+```
+└── Supraclavicular nodes (stations 1R and 1L)
+└── Superior mediastinal nodes (stations 2-4)
+  ├── Upper paratracheal (stations 2R and 2L)
+  ├── Pre-vascular (stations 3aR and 3aL)
+  ├── Pre-vertebral (station 3P)
+  ├── Lower paratracheal (stations 4R and 4L)
+└── Aortic nodes (stations 5-6)
+  ├── Subaortic (station 5)
+  ├── Para-aortic (station 6)
+└── Inferior mediastinal nodes (stations 7-9)
+  ├── Subcarinal (stations 7R and 7L)
+  ├── Paraesophageal (stations 8R and 8L)
+  ├── Pulmonary ligament (station 9)
+└── Hilar, lobar, and (sub)segmental nodes (stations 10-14)
+  ├── Hilar (stations 10R and 10L)
+  ├── Interlobar middle-lower (stations 11R and 11L)
+  ├── Lobar (stations 12R and 12L)
+  ├── Segmental (stations 13R and 13L)
+  ├── Subsegmental (stations 14R and 14L)
+```
+
+
 ## [Demo](https://github.com/raidionics/LyNoS#demo) <a target="_blank" href="https://huggingface.co/spaces/andreped/LyNoS"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg"></a>
 
 To access the live demo, click on the `Hugging Face` badge above. Below is a snapshot of the current state of the demo app.
