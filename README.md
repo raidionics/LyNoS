@@ -96,8 +96,8 @@ To access the live demo, click on the `Hugging Face` badge above. Below is a sna
 Alternatively, you can deploy the software locally. Note that this is only relevant for development purposes. Simply dockerize the app and run it:
 
 ```
-docker build -t LyNoS .
-docker run -it -p 7860:7860 LyNoS
+docker build -t lynos .
+docker run -it -p 7860:7860 lynos
 ```
 
 Then open `http://127.0.0.1:7860` in your favourite internet browser to view the demo.
