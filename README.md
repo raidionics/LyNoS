@@ -99,7 +99,9 @@ The stations considered can be organized as follows:
     ├── Segmental (stations 13R and 13L)
     └── Subsegmental (stations 14R and 14L)
 ```
-
+### [NIH Dataset Completion](https://github.com/raidionics/LyNoS#nih-dataset-completion)
+A larger dataset made of 90 patients featuring enlarged lymph nodes has also been made available by the National Institutes of Health, and is available for download on the official [web-page](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=19726546).
+As a supplement to this dataset, lymph nodes segmentation masks have been refined for all patients and stations have been manually assigned to each, available [here](https://drive.google.com/uc?id=1iVCnZc1GHwtx9scyAXdANqz2HdQArTHn).    
 
 ## [Demo](https://github.com/raidionics/LyNoS#demo) <a target="_blank" href="https://huggingface.co/spaces/andreped/LyNoS"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg"></a>
 
