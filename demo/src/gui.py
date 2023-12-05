@@ -1,7 +1,6 @@
 import os
 
 import gradio as gr
-
 from gradio_shinymodel3d import ShinyModel3D
 
 from .convert import nifti_to_obj
@@ -52,7 +51,7 @@ class WebUI:
             step=1,
             label="Which 2D slice to show",
         )
-        #self.volume_renderer = gr.Model3D(
+        # self.volume_renderer = gr.Model3D(
         self.volume_renderer = ShinyModel3D()
 
     def set_class_name(self, value):
@@ -88,7 +87,11 @@ class WebUI:
 
     def get_img_pred_pair(self, k):
         k = int(k)
-        out = gr.AnnotatedImage(self.combine_ct_and_seg(self.images[k], self.pred_images[k]), visible=True, elem_id="model-2d",)
+        out = gr.AnnotatedImage(
+            self.combine_ct_and_seg(self.images[k], self.pred_images[k]),
+            visible=True,
+            elem_id="model-2d",
+        )
         return out
 
     def toggle_sidebar(self, state):
@@ -108,9 +111,9 @@ class WebUI:
                         autoscroll=True,
                         elem_id="logs",
                         show_copy_button=True,
-                        #scroll_to_output=False,
+                        # scroll_to_output=False,
                         container=True,
-                        #line_breaks=True,
+                        # line_breaks=True,
                     )
                     demo.load(read_logs, None, logs, every=1)
 
