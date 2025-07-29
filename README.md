@@ -107,7 +107,7 @@ As a supplement to this dataset, lymph nodes segmentation masks have been refine
 
 To access the live demo, click on the `Hugging Face` badge above. Below is a snapshot of the current state of the demo app.
 
-<img width="1400" alt="Screenshot 2023-11-09 at 20 53 29" src="https://github.com/raidionics/LyNoS/assets/29090665/ce661da0-d172-4481-b9b5-8b3e29a9fc1f">
+<img width="1904" height="1050" alt="image" src="https://github.com/user-attachments/assets/c97adaa9-41f8-426c-84ca-54ab87fc9441" />
 
 ## [Continuous integration](https://github.com/raidionics/LyNoS#continuous-integration)
 
