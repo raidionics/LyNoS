@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://dbouget:$HF_TOKEN@huggingface.co/spaces/dbouget/LyNoS main
+        run: git push --force https://dbouget:$HF_TOKEN@huggingface.co/spaces/dbouget/LyNoS main
