@@ -16,7 +16,7 @@ app_file: demo/app.py
 
 [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/raidionics/LyNoS/blob/main/LICENSE.md)
 [![CI/CD](https://github.com/raidionics/LyNoS/actions/workflows/deploy.yml/badge.svg)](https://github.com/raidionics/LyNoS/actions/workflows/deploy.yml)
-<a target="_blank" href="https://huggingface.co/spaces/andreped/LyNoS"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg"></a>
+<a target="_blank" href="https://huggingface.co/spaces/dbouget/LyNos"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg"></a>
 <a href="https://colab.research.google.com/gist/andreped/274bf953771059fd9537877404369bed/lynos-load-dataset-example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 [![paper](https://img.shields.io/badge/paper-pdf-D12424)](https://doi.org/10.1080/21681163.2022.2043778)
 
@@ -103,7 +103,7 @@ The stations considered can be organized as follows:
 A larger dataset made of 90 patients featuring enlarged lymph nodes has also been made available by the National Institutes of Health, and is available for download on the official [web-page](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=19726546).
 As a supplement to this dataset, lymph nodes segmentation masks have been refined for all patients and stations have been manually assigned to each, available [here](https://drive.google.com/uc?id=1iVCnZc1GHwtx9scyAXdANqz2HdQArTHn).    
 
-## [Demo](https://github.com/raidionics/LyNoS#demo) <a target="_blank" href="https://huggingface.co/spaces/andreped/LyNoS"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg"></a>
+## [Demo](https://github.com/raidionics/LyNoS#demo) <a target="_blank" href="https://huggingface.co/spaces/dbouget/LyNos"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg"></a>
 
 To access the live demo, click on the `Hugging Face` badge above. Below is a snapshot of the current state of the demo app.
 
