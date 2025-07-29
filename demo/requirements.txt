@@ -1,3 +1,2 @@
-raidionicsrads@git+https://github.com/dbouget/raidionics_rads_lib
-gradio@https://gradio-pypi-previews.s3.amazonaws.com/c5d763c3305fc143ace9ca6f8bdc32f12cef74d1/gradio-4.42.0-py3-none-any.whl
-gradio_shinymodel3d@https://github.com/raidionics/LyNoS/releases/download/ShinyModel3D/gradio_shinymodel3d-0.0.1-py3-none-any.whl
+raidionicsrads
+gradio
